@@ -1,12 +1,11 @@
 package com.valquiria.dndspells.data.remote
 
-import androidx.lifecycle.LiveData
-import com.valquiria.dndspells.data.remote.response.SpellListResponse
+import com.valquiria.dndspells.data.remote.response.SpellItemResponse
 import retrofit2.http.GET
 
 interface SpellsApi {
 
     @GET("spells/")
-    suspend fun getSpells(): LiveData<SpellListResponse>
+    suspend fun getSpells(): MutableList<SpellItemResponse>
 
 }
