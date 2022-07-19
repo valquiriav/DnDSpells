@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph">
+
+    <fragment
+        android:id="@+id/gistListFragment"
+        android:name="com.valquiria.dndspells.presentation.ui.spellListScreen.SpellListFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/fragment_spell_list" >
+
+    </fragment>
+
+</navigation>

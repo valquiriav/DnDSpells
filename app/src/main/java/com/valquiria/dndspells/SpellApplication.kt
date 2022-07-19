@@ -16,7 +16,7 @@ class SpellApplication : Application() {
         }
 
         PresentationModule.load()
-        DataModule.load() //conexão http e o gson (o objeto a partir do json)
+        DataModule.load()
         DomainModule.load()
     }
 }

@@ -3,7 +3,8 @@ package com.valquiria.dndspells.data.di
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.valquiria.dndspells.core.Constants.BASE_URL
+import com.valquiria.dndspells.Constants.BASE_URL
+import com.valquiria.dndspells.Constants.OK_HTTP
 import com.valquiria.dndspells.data.remote.SpellsApi
 import com.valquiria.dndspells.data.repository.SpellRepository
 import com.valquiria.dndspells.data.repository.SpellRepositoryImpl
@@ -16,8 +17,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object DataModule {
-
-    private const val OK_HTTP = "Ok Http"
 
     private val gson: Gson by lazy { GsonBuilder().create() }
 

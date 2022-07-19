@@ -1,4 +1,4 @@
-package com.valquiria.dndspells.presentation.ui
+package com.valquiria.dndspells.presentation.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

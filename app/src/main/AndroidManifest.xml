@@ -14,12 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DnDSpells"
         tools:targetApi="31">
+
         <activity
-            android:name=".presentation.ui.MainActivity"
+            android:name=".presentation.ui.activity.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".presentation.ui.activity.SpellListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".presentation.ui.activity.SplashScreen"
+            android:theme="@style/FullScreenActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -23,6 +23,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/MyGrimoireTitle"
-        tools:listitem="@layout/spell_item" />
+        tools:listitem="@layout/recycler_view_item_spell" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
