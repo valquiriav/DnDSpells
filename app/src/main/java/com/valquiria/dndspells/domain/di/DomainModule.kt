@@ -13,7 +13,7 @@ object DomainModule {
 
     private fun useCaseModule(): Module {
         return module {
-            factory { GetSpellListUseCase() }
+            factory { GetSpellListUseCase(get()) }
         }
     }
 }

@@ -22,10 +22,10 @@ object DataModule {
     private val gson: Gson by lazy { GsonBuilder().create() }
 
     fun load() {
-        loadKoinModules(gistModule() + networkModule())
+        loadKoinModules(spellModule() + networkModule())
     }
 
-    private fun gistModule(): Module {
+    private fun spellModule(): Module {
         return module {
             single<SpellRepository> {
                 SpellRepositoryImpl(get(), get())
