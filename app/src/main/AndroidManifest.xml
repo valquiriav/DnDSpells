@@ -20,10 +20,6 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".presentation.ui.activity.SpellListActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
             android:name=".presentation.ui.activity.SplashScreenActivity"
             android:theme="@style/FullScreenActivity"
             android:screenOrientation="portrait"
