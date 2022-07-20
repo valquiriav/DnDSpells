@@ -18,7 +18,7 @@ class SpellListAdapter(
     ): ViewHolder {
 
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fragment_spell_list, parent, false)
+            .inflate(R.layout.activity_main, parent, false)
 
         return ViewHolder(view)
     }

@@ -12,4 +12,5 @@ class SpellListViewModel(
     private fun getSpells() = viewModelScope.launch {
         spellListUseCase.execute()
     }
+
 }

@@ -7,7 +7,7 @@
         android:id="@+id/gistListFragment"
         android:name="com.valquiria.dndspells.presentation.ui.spellListScreen.SpellListFragment"
         android:label="home_fragment"
-        tools:layout="@layout/fragment_spell_list" >
+        tools:layout="@layout/activity_spell_list" >
 
     </fragment>
 
