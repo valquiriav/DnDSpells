@@ -97,4 +97,14 @@ dependencies {
     kapt "androidx.room:room-compiler:2.3.0"
     // Room Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:2.3.0"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.6.4"
+    implementation "com.squareup.retrofit2:converter-gson:2.6.4"
+    implementation("com.squareup.retrofit2:retrofit:2.6.4") {
+        exclude module: 'okhttp'
+    }
+    //Rx
+    implementation "io.reactivex.rxjava2:rxjava:2.1.1"
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
 }

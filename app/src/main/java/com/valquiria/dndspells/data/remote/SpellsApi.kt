@@ -1,11 +1,12 @@
 package com.valquiria.dndspells.data.remote
 
-import com.valquiria.dndspells.data.remote.response.SpellItemResponse
+import com.valquiria.dndspells.data.remote.response.SpellResponse
+import io.reactivex.Single
 import retrofit2.http.GET
 
 interface SpellsApi {
 
     @GET("spells/")
-    suspend fun getSpells(): MutableList<SpellItemResponse>
+    fun getSpells(): Single<SpellResponse> //single rx
 
 }

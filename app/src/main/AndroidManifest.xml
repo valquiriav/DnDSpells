@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.valquiria.dndspells">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".SpellApplication"
         android:allowBackup="true"

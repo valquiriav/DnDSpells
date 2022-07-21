@@ -1,4 +1,4 @@
-package com.valquiria.dndspells.domain.di
+package com.valquiria.dndspells.di
 
 import com.valquiria.dndspells.domain.GetSpellListUseCase
 import org.koin.core.context.loadKoinModules
@@ -11,7 +11,8 @@ object DomainModule {
         loadKoinModules(useCaseModule())
     }
 
-    private fun useCaseModule(): Module {
+
+    fun useCaseModule(): Module {
         return module {
             factory { GetSpellListUseCase(get()) }
         }

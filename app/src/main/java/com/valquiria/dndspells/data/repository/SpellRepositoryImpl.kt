@@ -9,22 +9,6 @@ class SpellRepositoryImpl(
     private val spellsApi: SpellsApi
     ) : SpellRepository {
 
-    override suspend fun loadSpells(): MutableList<SpellEntity> {
-
-        val apiSpellList = spellsApi.getSpells()
-
-        apiSpellList.map { spellResponse ->
-
-            val spellEntity = SpellEntity(
-                id = spellResponse.index,
-                spellName = spellResponse.name
-            )
-
-            spellDao.save(spellEntity)
-        }
-
-        return spellDao.getAll()
-
-    }
+    override fun loadSpells() = spellsApi.getSpells()
 
 }
