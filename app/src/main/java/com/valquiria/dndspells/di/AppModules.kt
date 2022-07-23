@@ -19,7 +19,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-object Provides {
+object AppModules {
 
     fun dataModule() = module {
 
@@ -34,7 +34,6 @@ object Provides {
         }
 
         factory<SpellsApi> {
-        //prove instancia da interface do retrofit
             Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(get())
@@ -52,7 +51,7 @@ object Provides {
         }
 
         factory<SpellRepository> {
-            SpellRepositoryImpl(get(), get())
+            SpellRepositoryImpl(get())
         }
     }
 

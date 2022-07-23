@@ -6,11 +6,19 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.valquiria.dndspells.R
-import com.valquiria.dndspells.data.database.entity.SpellEntity
+import com.valquiria.dndspells.data.remote.response.Spell
 
-class SpellListAdapter(
-    private val spellList: MutableList<SpellEntity>
-) : RecyclerView.Adapter<SpellListAdapter.ViewHolder>() {
+class SpellListAdapter : RecyclerView.Adapter<SpellListAdapter.ViewHolder>() {
+
+    private val listOfItems = arrayListOf<Spell>()
+
+    fun addItems(list: List<Spell>): List<Spell> {
+        listOfItems.clear()
+        listOfItems.addAll(list)
+        notifyDataSetChanged()
+
+        return list
+    }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -18,25 +26,25 @@ class SpellListAdapter(
     ): ViewHolder {
 
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.activity_main, parent, false)
+            .inflate(R.layout.recycler_view_item_spell, parent, false)
 
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = spellList[position]
+        val item = listOfItems[position]
 
-        holder.bindView(item)
+        holder.bind(item)
     }
 
-    override fun getItemCount(): Int = spellList.size
+    override fun getItemCount(): Int = listOfItems.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val textViewSpellName: TextView = itemView.findViewById(R.id.spellName)
+        private val textViewSpellName: TextView? = itemView.findViewById(R.id.spellName)
 
-        fun bindView(spell: SpellEntity) {
-            textViewSpellName.text = spell.spellName
+        fun bind(spell: Spell) {
+            textViewSpellName?.text = spell.name
         }
     }
 }

@@ -1,27 +1,29 @@
 package com.valquiria.dndspells.presentation.ui.spellListScreen
 
-import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.valquiria.dndspells.data.database.entity.SpellEntity
+import com.valquiria.dndspells.data.remote.response.Spell
 import com.valquiria.dndspells.domain.GetSpellListUseCase
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.coroutines.launch
 
 class SpellListViewModel(
     private val getSpellListUseCase: GetSpellListUseCase
-): ViewModel() {
+) : ViewModel() {
+
+    val status = MutableLiveData<List<Spell>>()
+    val observableStatus: LiveData<List<Spell>>
+        get() = status
 
     fun getSpells() {
         getSpellListUseCase.execute()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({
-                       Log.e("Teste", it.toString()) //printa os dados
+                status.value = it
             }, {
-                it.printStackTrace() //printa erro se der
+                it.printStackTrace()
             })
     }
-
 }
