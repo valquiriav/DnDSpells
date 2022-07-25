@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">DnDSpells</string>
-    <string name="my_grimoire">My Grimoire</string>
+    <string name="app_name">Chambers and Wyverns</string>
     <string name="spell_name">Spell Name</string>
 </resources>

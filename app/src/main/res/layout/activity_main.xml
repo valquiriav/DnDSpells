@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
     tools:context=".presentation.ui.activity.MainActivity">
 
     <TextView
@@ -12,8 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_40"
-        android:text="@string/my_grimoire"
-        android:textSize="24dp"
+        android:text="@string/app_name"
+        android:textSize="28sp"
+        android:textColor="@color/purple_700"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
