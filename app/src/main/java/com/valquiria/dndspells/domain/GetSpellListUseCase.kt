@@ -7,5 +7,5 @@ import io.reactivex.Single
 class GetSpellListUseCase(
     private val repository: SpellRepository
 ) {
-    fun execute(): Single<List<Spell>?> = repository.loadSpells()
+    fun getSpells(): Single<List<Spell>?> = repository.loadSpells()
 }

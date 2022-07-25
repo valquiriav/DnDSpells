@@ -53,11 +53,19 @@ android {
 
 dependencies {
 
+    testImplementation 'junit:junit:4.13.2'
+    ext {
+        jupiter = "5.7.1"
+        androix_testing = "2.1.0"
+        mockk = "1.11.0"
+        mockito_core = "3.3.3"
+        junit = "4.13.2"
+    }
+
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    testImplementation 'junit:junit:4.+'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
@@ -66,8 +74,8 @@ dependencies {
     implementation "com.google.accompanist:accompanist-coil:0.7.0"
 
     // Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
 
     // Koin
 
@@ -93,18 +101,27 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
 
     // Room
-    implementation "androidx.room:room-runtime:2.3.0"
-    kapt "androidx.room:room-compiler:2.3.0"
+    implementation "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
     // Room Kotlin Extensions and Coroutines support for Room
-    implementation "androidx.room:room-ktx:2.3.0"
+    implementation "androidx.room:room-ktx:2.4.2"
 
     //Retrofit
     implementation "com.squareup.retrofit2:adapter-rxjava2:2.6.4"
-    implementation "com.squareup.retrofit2:converter-gson:2.6.4"
-    implementation("com.squareup.retrofit2:retrofit:2.6.4") {
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation("com.squareup.retrofit2:retrofit:2.9.0") {
         exclude module: 'okhttp'
     }
     //Rx
-    implementation "io.reactivex.rxjava2:rxjava:2.1.1"
+    implementation "io.reactivex.rxjava2:rxjava:2.2.19"
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+
+    //Testing
+    testImplementation "io.mockk:mockk:$ext.mockk"
+    testImplementation "junit:junit:$ext.junit"
+    testImplementation "org.mockito:mockito-core:$ext.mockito_core"
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$ext.jupiter")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$ext.jupiter")
+    testImplementation "org.junit.jupiter:junit-jupiter"
+    testImplementation "androidx.arch.core:core-testing:$androix_testing"
 }
