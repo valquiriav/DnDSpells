@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Chambers and Wyverns</string>
-    <string name="spell_name">Spell Name</string>
+    <string name="spell_name">Eldritch Blast</string>
+    <string name="spell_description">A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 force damage.</string>
 </resources>
