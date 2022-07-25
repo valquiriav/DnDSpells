@@ -7,17 +7,31 @@
     tools:context=".presentation.ui.activity.MainActivity">
 
     <TextView
-        android:id="@+id/MyGrimoireTitle"
+        android:id="@+id/spellsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_40"
         android:text="@string/app_name"
-        android:textSize="28sp"
         android:textColor="@color/purple_700"
+        android:textSize="28sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/spellsSearchView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/spellsSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:background="@color/grey"
+        android:focusable="true"
+        app:layout_constraintBottom_toTopOf="@id/spellListRecyclerView"
+        app:layout_constraintCircleRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spellsTitle" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/spellListRecyclerView"
@@ -27,10 +41,8 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/MyGrimoireTitle"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/spellsSearchView"
         tools:listitem="@layout/recycler_view_item_spell" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
