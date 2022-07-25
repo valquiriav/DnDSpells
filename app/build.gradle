@@ -54,6 +54,7 @@ android {
 dependencies {
 
     testImplementation 'junit:junit:4.13.2'
+
     ext {
         jupiter = "5.7.1"
         androix_testing = "2.1.0"
