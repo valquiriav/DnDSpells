@@ -16,19 +16,21 @@ import org.mockito.Mockito
 
 internal class AboutViewModelTest : BaseViewModelTest<List<Spell>, SpellListViewModel>() {
 
+    //declara variável que vamos usar
     @MockK
     lateinit var useCase: GetSpellListUseCase
 
     @Test
     fun shouldGetSpellData() {
+        //condição de sucesso do teste
         every { useCase.getSpells() } returns Stub.getSpells().toSingle()
 
+        //simula uma ação
         viewModel.getSpells()
 
+        //verifica a ordem
         Mockito.inOrder(observerLoading, observerStatus).run {
-            verify(observerLoading).onChanged(true)
             verify(observerStatus).onChanged(Stub.getSpells())
-            verify(observerLoading).onChanged(false)
         }
     }
 
@@ -39,9 +41,7 @@ internal class AboutViewModelTest : BaseViewModelTest<List<Spell>, SpellListView
         viewModel.getSpells()
 
         Mockito.inOrder(observerLoading, observerAction).run {
-            verify(observerLoading).onChanged(true)
             verify(observerAction).onChanged(SpellAction.GenericError)
-            verify(observerLoading).onChanged(false)
         }
     }
 
@@ -52,9 +52,7 @@ internal class AboutViewModelTest : BaseViewModelTest<List<Spell>, SpellListView
         viewModel.getSpells()
 
         Mockito.inOrder(observerLoading, observerAction).run {
-            verify(observerLoading).onChanged(true)
             verify(observerAction).onChanged(SpellAction.NoInternet)
-            verify(observerLoading).onChanged(false)
         }
     }
 }

@@ -13,7 +13,7 @@ abstract class BaseViewModel<S> : ViewModel() {
     val observableStatus: LiveData<S>
         get() = status
 
-    private val action = MutableLiveData<SpellAction>()
+    val action = MutableLiveData<SpellAction>()
     val observableAction: LiveData<SpellAction> = action
 
     private val loading = MutableLiveData(false)
