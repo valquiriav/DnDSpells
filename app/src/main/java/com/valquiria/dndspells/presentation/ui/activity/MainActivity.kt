@@ -1,6 +1,7 @@
 package com.valquiria.dndspells.presentation.ui.activity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         spellListRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
         spellListAdapter = SpellListAdapter()
         spellListRecyclerView.adapter = spellListAdapter
+
+        spellListAdapter.onItemClick = { item ->
+            Log.d("TAG", "$item")
+        }
     }
 
     private fun setupObserver() {
@@ -41,4 +46,6 @@ class MainActivity : AppCompatActivity() {
                 spellListAdapter.addItems(it)
             }
     }
+
+
 }

@@ -10,6 +10,7 @@ import com.valquiria.dndspells.data.remote.response.Spell
 
 class SpellListAdapter : RecyclerView.Adapter<SpellListAdapter.ViewHolder>() {
 
+    var onItemClick: ((Spell) -> Unit)? = null
     private val listOfItems = arrayListOf<Spell>()
 
     fun addItems(list: List<Spell>): List<Spell> {
@@ -37,14 +38,21 @@ class SpellListAdapter : RecyclerView.Adapter<SpellListAdapter.ViewHolder>() {
         holder.bind(item)
     }
 
+
     override fun getItemCount(): Int = listOfItems.size
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val textViewSpellName: TextView? = itemView.findViewById(R.id.spellName)
 
         fun bind(spell: Spell) {
             textViewSpellName?.text = spell.name
+        }
+
+        init {
+            itemView.setOnClickListener {
+                onItemClick?.invoke(listOfItems[adapterPosition])
+            }
         }
     }
 }
