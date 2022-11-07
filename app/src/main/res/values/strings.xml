@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Chambers and Wyverns</string>
     <string name="spell_name">Spell Name</string>
+    <string name="spell_description">Spell Description</string>
 </resources>
