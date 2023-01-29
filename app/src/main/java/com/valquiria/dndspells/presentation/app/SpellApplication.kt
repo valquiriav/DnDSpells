@@ -1,4 +1,4 @@
-package com.valquiria.dndspells
+package com.valquiria.dndspells.presentation.app
 
 import android.app.Application
 import com.valquiria.dndspells.di.AppModules

@@ -2,7 +2,7 @@ package com.valquiria.dndspells.presentation.ui.spellListScreen
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.valquiria.dndspells.presentation.ui.BaseViewModel
+import com.valquiria.dndspells.presentation.ui.viewModel.BaseViewModel
 import com.valquiria.dndspells.presentation.ui.SpellAction
 import io.mockk.impl.annotations.InjectMockKs
 import io.reactivex.android.plugins.RxAndroidPlugins

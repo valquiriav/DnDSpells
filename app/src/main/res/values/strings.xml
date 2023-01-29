@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Chambers and Wyverns</string>
+    <string name="toolbar_title_list">My Spells</string>
     <string name="spell_name">Spell Name</string>
     <string name="spell_description">Spell Description</string>
+    <string name="app_logo">App Logo</string>
 </resources>

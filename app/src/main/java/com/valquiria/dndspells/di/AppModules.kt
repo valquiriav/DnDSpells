@@ -8,8 +8,8 @@ import com.valquiria.dndspells.data.database.dao.SpellDao
 import com.valquiria.dndspells.data.remote.SpellsApi
 import com.valquiria.dndspells.data.repository.SpellRepository
 import com.valquiria.dndspells.data.repository.SpellRepositoryImpl
-import com.valquiria.dndspells.domain.GetSpellListUseCase
-import com.valquiria.dndspells.presentation.ui.spellListScreen.SpellListViewModel
+import com.valquiria.dndspells.domain.usecase.GetSpellListUseCase
+import com.valquiria.dndspells.presentation.ui.viewModel.SpellListViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext

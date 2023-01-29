@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/nav_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/spellListFragment">
+
+    <fragment
+        tools:layout="@layout/fragment_spell_list"
+        android:id="@+id/spellListFragment"
+        android:name="com.valquiria.dndspells.presentation.ui.fragments.SpellListFragment"
+        android:label="navSpellList">
+        <action
+            android:id="@+id/action_spellListFragment_to_spellDetailsFragment"
+            app:destination="@id/spellDetailsFragment" />
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_spell_details"
+        android:id="@+id/spellDetailsFragment"
+        android:name="com.valquiria.dndspells.presentation.ui.fragments.SpellDetailsFragment"
+        android:label="navSpellDetailsFragment" />
 
 </navigation>

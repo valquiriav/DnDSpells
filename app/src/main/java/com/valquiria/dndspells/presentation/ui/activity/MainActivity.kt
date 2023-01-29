@@ -1,51 +1,20 @@
 package com.valquiria.dndspells.presentation.ui.activity
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.valquiria.dndspells.R
-import com.valquiria.dndspells.presentation.ui.spellListScreen.SpellListAdapter
-import com.valquiria.dndspells.presentation.ui.spellListScreen.SpellListViewModel
-import org.koin.android.ext.android.inject
+import com.valquiria.dndspells.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private val viewModel: SpellListViewModel by inject()
-
-    private lateinit var spellListAdapter: SpellListAdapter
-
-    private lateinit var spellListRecyclerView: RecyclerView
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        setupRecyclerView()
-        setupObserver()
-        viewModel.getSpells()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
-
-    private fun setupRecyclerView() {
-
-        spellListRecyclerView = findViewById(R.id.spellListRecyclerView)
-
-        spellListRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
-        spellListAdapter = SpellListAdapter()
-        spellListRecyclerView.adapter = spellListAdapter
-
-        spellListAdapter.onItemClick = { item ->
-            Log.d("TAG", "$item")
-        }
-    }
-
-    private fun setupObserver() {
-        viewModel.observableStatus
-            .observe(this) {
-                spellListAdapter.addItems(it)
-            }
-    }
-
 
 }

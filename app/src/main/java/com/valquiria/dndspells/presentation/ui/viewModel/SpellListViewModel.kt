@@ -1,9 +1,8 @@
-package com.valquiria.dndspells.presentation.ui.spellListScreen
+package com.valquiria.dndspells.presentation.ui.viewModel
 
 import com.valquiria.dndspells.data.remote.exception.SpellException
 import com.valquiria.dndspells.data.remote.response.Spell
-import com.valquiria.dndspells.domain.GetSpellListUseCase
-import com.valquiria.dndspells.presentation.ui.BaseViewModel
+import com.valquiria.dndspells.domain.usecase.GetSpellListUseCase
 import com.valquiria.dndspells.presentation.ui.SpellAction
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

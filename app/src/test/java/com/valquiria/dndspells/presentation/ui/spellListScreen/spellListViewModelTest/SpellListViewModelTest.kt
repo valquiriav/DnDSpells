@@ -2,10 +2,10 @@ package com.valquiria.dndspells.presentation.ui.spellListScreen.spellListViewMod
 
 import com.valquiria.dndspells.data.remote.exception.SpellException
 import com.valquiria.dndspells.data.remote.response.Spell
-import com.valquiria.dndspells.domain.GetSpellListUseCase
+import com.valquiria.dndspells.domain.usecase.GetSpellListUseCase
 import com.valquiria.dndspells.presentation.ui.SpellAction
 import com.valquiria.dndspells.presentation.ui.spellListScreen.BaseViewModelTest
-import com.valquiria.dndspells.presentation.ui.spellListScreen.SpellListViewModel
+import com.valquiria.dndspells.presentation.ui.viewModel.SpellListViewModel
 import com.valquiria.dndspells.presentation.ui.spellListScreen.Stub
 import com.valquiria.dndspells.presentation.ui.spellListScreen.toSingle
 import io.mockk.every

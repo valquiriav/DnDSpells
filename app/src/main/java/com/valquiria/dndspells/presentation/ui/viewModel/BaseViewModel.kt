@@ -1,8 +1,9 @@
-package com.valquiria.dndspells.presentation.ui
+package com.valquiria.dndspells.presentation.ui.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.valquiria.dndspells.presentation.ui.SpellAction
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 

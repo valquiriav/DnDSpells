@@ -1,4 +1,4 @@
-package com.valquiria.dndspells.domain
+package com.valquiria.dndspells.domain.usecase
 
 import com.valquiria.dndspells.data.remote.response.Spell
 import com.valquiria.dndspells.data.repository.SpellRepository

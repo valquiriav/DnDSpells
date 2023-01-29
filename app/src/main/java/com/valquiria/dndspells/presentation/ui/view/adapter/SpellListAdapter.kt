@@ -1,4 +1,4 @@
-package com.valquiria.dndspells.presentation.ui.spellListScreen
+package com.valquiria.dndspells.presentation.ui.view.adapter
 
 import android.view.LayoutInflater
 import android.view.View

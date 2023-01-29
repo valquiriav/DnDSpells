@@ -8,4 +8,6 @@ class SpellRepositoryImpl(
 
     override fun loadSpells() = spellsApi.getSpells()
         .map { it.results }
+
+    override fun loadSpellDetails(index: String) = spellsApi.getSpell(index)
 }
