@@ -6,16 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.valquiria.dndspells.databinding.FragmentSpellListBinding
-import com.valquiria.dndspells.presentation.ui.view.adapter.SpellListAdapter
+import com.valquiria.dndspells.presentation.ui.view.recycler.SpellListAdapter
 import com.valquiria.dndspells.presentation.ui.viewModel.SpellListViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SpellListFragment : Fragment() {
 
     private val adapter by lazy { SpellListAdapter() }
-
     private lateinit var binding: FragmentSpellListBinding
-
     private val viewModel: SpellListViewModel by viewModel()
 
     override fun onCreateView(
@@ -29,8 +27,8 @@ class SpellListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupObservables()
         setupView()
+        setupObserver()
         viewModel.getSpells()
     }
 
@@ -40,11 +38,9 @@ class SpellListFragment : Fragment() {
         }
     }
 
-    private fun setupObservables() {
-        viewModel.observableStatus
-            .observe(viewLifecycleOwner) {
-                adapter.addItems(it)
-            }
+    private fun setupObserver() {
+        viewModel.observableStatus.observe(viewLifecycleOwner) {
+            adapter.addItems(it)
+        }
     }
-
 }

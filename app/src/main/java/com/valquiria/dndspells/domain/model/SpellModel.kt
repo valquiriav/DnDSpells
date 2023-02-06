@@ -1,6 +1,7 @@
 package com.valquiria.dndspells.domain.model
 
-data class SpellInfoModel(
+data class SpellModel(
+    val spellIndex: String?,
     val spellName: String?,
     val spellDescription: String?
 )

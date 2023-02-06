@@ -1,9 +1,9 @@
-package com.valquiria.dndspells.data.database
+package com.valquiria.dndspells.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.valquiria.dndspells.data.database.dao.SpellDao
-import com.valquiria.dndspells.data.database.entity.SpellEntity
+import com.valquiria.dndspells.data.local.dao.SpellDao
+import com.valquiria.dndspells.data.local.entity.SpellEntity
 
 @Database(
     entities = [SpellEntity::class],

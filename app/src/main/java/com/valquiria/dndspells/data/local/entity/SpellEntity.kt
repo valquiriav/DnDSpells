@@ -1,4 +1,4 @@
-package com.valquiria.dndspells.data.database.entity
+package com.valquiria.dndspells.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

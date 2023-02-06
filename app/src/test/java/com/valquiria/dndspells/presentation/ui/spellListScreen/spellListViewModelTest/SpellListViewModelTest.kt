@@ -1,7 +1,7 @@
 package com.valquiria.dndspells.presentation.ui.spellListScreen.spellListViewModelTest
 
 import com.valquiria.dndspells.data.remote.exception.SpellException
-import com.valquiria.dndspells.data.remote.response.Spell
+import com.valquiria.dndspells.data.remote.response.SpellItemResponse
 import com.valquiria.dndspells.domain.usecase.GetSpellListUseCase
 import com.valquiria.dndspells.presentation.ui.SpellAction
 import com.valquiria.dndspells.presentation.ui.spellListScreen.BaseViewModelTest
@@ -14,7 +14,7 @@ import io.reactivex.Single
 import org.junit.Test
 import org.mockito.Mockito
 
-internal class AboutViewModelTest : BaseViewModelTest<List<Spell>, SpellListViewModel>() {
+internal class AboutViewModelTest : BaseViewModelTest<List<SpellItemResponse>, SpellListViewModel>() {
 
     //declara variável que vamos usar
     @MockK

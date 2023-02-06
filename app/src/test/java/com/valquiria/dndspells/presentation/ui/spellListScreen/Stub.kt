@@ -1,11 +1,11 @@
 package com.valquiria.dndspells.presentation.ui.spellListScreen
 
-import com.valquiria.dndspells.data.remote.response.Spell
+import com.valquiria.dndspells.data.remote.response.SpellItemResponse
 
 object Stub {
 
     fun getSpells() = listOf(
-        Spell("name", "123"),
-        Spell("name", "123")
+        SpellItemResponse("name", "123"),
+        SpellItemResponse("name", "123")
     )
 }

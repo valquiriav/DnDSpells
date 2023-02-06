@@ -1,10 +1,10 @@
-package com.valquiria.dndspells.data.database.dao
+package com.valquiria.dndspells.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.valquiria.dndspells.data.database.entity.SpellEntity
+import com.valquiria.dndspells.data.local.entity.SpellEntity
 
 @Dao
 interface SpellDao {

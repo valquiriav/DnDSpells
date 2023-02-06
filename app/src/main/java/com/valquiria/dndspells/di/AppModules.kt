@@ -3,12 +3,14 @@ package com.valquiria.dndspells.di
 import androidx.room.Room
 import com.valquiria.dndspells.BuildConfig
 import com.valquiria.dndspells.Constants.BASE_URL
-import com.valquiria.dndspells.data.database.SpellDatabase
-import com.valquiria.dndspells.data.database.dao.SpellDao
-import com.valquiria.dndspells.data.remote.SpellsApi
-import com.valquiria.dndspells.data.repository.SpellRepository
-import com.valquiria.dndspells.data.repository.SpellRepositoryImpl
+import com.valquiria.dndspells.data.local.SpellDatabase
+import com.valquiria.dndspells.data.local.dao.SpellDao
+import com.valquiria.dndspells.data.api.SpellsApi
+import com.valquiria.dndspells.domain.repository.Repository
+import com.valquiria.dndspells.data.repository.RepositoryImpl
+import com.valquiria.dndspells.domain.usecase.GetSpellDetailsUseCase
 import com.valquiria.dndspells.domain.usecase.GetSpellListUseCase
+import com.valquiria.dndspells.presentation.ui.viewModel.SpellDetailsViewModel
 import com.valquiria.dndspells.presentation.ui.viewModel.SpellListViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -50,24 +52,22 @@ object AppModules {
                 .spellDao()
         }
 
-        factory<SpellRepository> {
-            SpellRepositoryImpl(get())
+        factory<Repository> {
+            RepositoryImpl(get())
         }
     }
 
     fun domainModule() = module {
 
-        factory {
-            GetSpellListUseCase(get())
-        }
+        factory { GetSpellListUseCase(get()) }
+        factory { GetSpellDetailsUseCase(get()) }
 
     }
 
     fun presentationModule() = module {
 
-        viewModel {
-            SpellListViewModel(get())
-        }
+        viewModel { SpellListViewModel(get()) }
+        viewModel {SpellDetailsViewModel(get()) }
     }
 
 }
