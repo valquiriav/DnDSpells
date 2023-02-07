@@ -18,14 +18,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/spellSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/padding_10"
+        android:text="@string/spell_subtitle"
+        android:textSize="22sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spellNameLabel" />
+
+    <TextView
         android:id="@+id/spellDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_40"
+        android:padding="@dimen/padding_40"
+        android:gravity="center"
+        android:lineSpacingExtra="5sp"
         android:text="@string/spell_description"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spellNameLabel" />
+        app:layout_constraintTop_toBottomOf="@id/spellSubtitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">Chambers and Wyverns</string>
-    <string name="toolbar_title_list">My Spells</string>
-    <string name="spell_name">Spell Name</string>
-    <string name="spell_description">Spell Description</string>
+
+    <string name="app_name">DnD Spells</string>
     <string name="app_logo">App Logo</string>
+
+    <string name="spell_name">Commune with Nature</string>
+    <string name="spell_subtitle">5th level divination</string>
+    <string name="spell_description">You briefly become one with nature and gain knowledge of the surrounding territory. In the outdoors, the spell gives you knowledge of the land within 3 miles of you. In caves and other natural underground settings, the radius is limited to 300 feet. The spell doesn’t function where nature has been replaced by construction, such as in dungeons and towns.</string>
+
 </resources>
