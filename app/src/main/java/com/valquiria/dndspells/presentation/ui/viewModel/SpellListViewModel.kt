@@ -10,7 +10,7 @@ import com.valquiria.dndspells.presentation.ui.SpellAction
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class SpellListViewModel(
+open class SpellListViewModel(
     private val getSpellListUseCase: GetSpellListUseCase
 ) : ViewModel() {
 
