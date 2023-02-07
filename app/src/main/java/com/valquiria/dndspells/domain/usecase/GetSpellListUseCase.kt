@@ -19,7 +19,7 @@ class GetSpellListUseCase(
                 SpellModel(
                     spellIndex = spell.index,
                     spellName = spell.name,
-                    spellDescription = spell.description
+                    spellDescription = spell.description?.elementAt(0)
                 )
             )
         }

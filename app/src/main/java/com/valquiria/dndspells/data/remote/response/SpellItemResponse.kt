@@ -11,5 +11,5 @@ data class SpellItemResponse(
     val name: String? = null,
 
     @field:SerializedName("desc")
-    val description: String? = null
+    val description: List<String>? = null
 )
