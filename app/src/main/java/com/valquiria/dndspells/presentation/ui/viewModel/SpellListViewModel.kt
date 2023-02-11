@@ -14,6 +14,9 @@ open class SpellListViewModel(
     private val getSpellListUseCase: GetSpellListUseCase
 ) : ViewModel() {
 
+    private val loading = MutableLiveData(false)
+    val observableLoading: LiveData<Boolean> = loading
+
     private val status = MutableLiveData<List<SpellModel>>()
     val observableStatus: LiveData<List<SpellModel>>
         get() = status

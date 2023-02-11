@@ -3,11 +3,10 @@ package com.valquiria.dndspells.di
 import androidx.room.Room
 import com.valquiria.dndspells.BuildConfig
 import com.valquiria.dndspells.Constants.BASE_URL
-import com.valquiria.dndspells.data.local.SpellDatabase
-import com.valquiria.dndspells.data.local.dao.SpellDao
 import com.valquiria.dndspells.data.api.SpellsApi
-import com.valquiria.dndspells.domain.repository.Repository
+import com.valquiria.dndspells.data.local.SpellDatabase
 import com.valquiria.dndspells.data.repository.RepositoryImpl
+import com.valquiria.dndspells.domain.repository.Repository
 import com.valquiria.dndspells.domain.usecase.GetSpellDetailsUseCase
 import com.valquiria.dndspells.domain.usecase.GetSpellListUseCase
 import com.valquiria.dndspells.presentation.ui.viewModel.SpellDetailsViewModel
@@ -45,8 +44,12 @@ object AppModules {
                 .create(SpellsApi::class.java)
         }
 
-        factory<SpellDao> {
-            Room.databaseBuilder(androidContext(), SpellDatabase::class.java, "SpellDatabase")
+        factory {
+            Room.databaseBuilder(
+                androidContext(),
+                SpellDatabase::class.java,
+                "SpellDatabase"
+            )
                 .allowMainThreadQueries()
                 .build()
                 .spellDao()
@@ -67,7 +70,7 @@ object AppModules {
     fun presentationModule() = module {
 
         viewModel { SpellListViewModel(get()) }
-        viewModel {SpellDetailsViewModel(get()) }
+        viewModel { SpellDetailsViewModel(get()) }
     }
 
 }

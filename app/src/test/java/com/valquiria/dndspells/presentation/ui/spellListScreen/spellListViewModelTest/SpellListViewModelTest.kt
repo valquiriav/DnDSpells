@@ -3,13 +3,12 @@ package com.valquiria.dndspells.presentation.ui.spellListScreen.spellListViewMod
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.valquiria.dndspells.data.remote.exception.SpellException
-import com.valquiria.dndspells.data.remote.response.SpellItemResponse
 import com.valquiria.dndspells.domain.usecase.GetSpellListUseCase
 import com.valquiria.dndspells.presentation.ui.SpellAction
-import com.valquiria.dndspells.presentation.ui.viewModel.SpellListViewModel
 import com.valquiria.dndspells.presentation.ui.spellListScreen.Stub
 import com.valquiria.dndspells.presentation.ui.spellListScreen.mock
 import com.valquiria.dndspells.presentation.ui.spellListScreen.toSingle
+import com.valquiria.dndspells.presentation.ui.viewModel.SpellListViewModel
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs
@@ -23,7 +22,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito
 
-abstract class SpellListViewModelTest<S, VM: SpellListViewModel>() {
+abstract class SpellListViewModelTest<S, VM : SpellListViewModel>() {
 
     @get:Rule
     val rule = InstantTaskExecutorRule()

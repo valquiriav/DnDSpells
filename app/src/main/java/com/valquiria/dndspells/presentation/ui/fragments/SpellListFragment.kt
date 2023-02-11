@@ -42,5 +42,10 @@ class SpellListFragment : Fragment() {
         viewModel.observableStatus.observe(viewLifecycleOwner) {
             adapter.addItems(it)
         }
+
+        viewModel.observableLoading.observe(viewLifecycleOwner){
+
+        }
     }
+
 }
