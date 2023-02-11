@@ -3,6 +3,8 @@ package com.valquiria.dndspells.presentation.ui.fragments
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.valquiria.dndspells.databinding.FragmentSpellListBinding
@@ -44,7 +46,12 @@ class SpellListFragment : Fragment() {
         }
 
         viewModel.observableLoading.observe(viewLifecycleOwner){
-
+            if (it == true) {
+                binding.shimmer.visibility = VISIBLE
+            } else {
+                binding.shimmer.visibility = GONE
+                binding.spellListRecyclerView.visibility = VISIBLE
+            }
         }
     }
 

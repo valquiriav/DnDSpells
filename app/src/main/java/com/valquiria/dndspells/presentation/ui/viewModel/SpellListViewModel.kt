@@ -17,6 +17,14 @@ open class SpellListViewModel(
     private val loading = MutableLiveData(false)
     val observableLoading: LiveData<Boolean> = loading
 
+    private fun showLoading() {
+        loading.value = true
+    }
+
+    private fun hideLoading() {
+        loading.value = false
+    }
+
     private val status = MutableLiveData<List<SpellModel>>()
     val observableStatus: LiveData<List<SpellModel>>
         get() = status
@@ -27,6 +35,8 @@ open class SpellListViewModel(
         getSpellListUseCase.getSpells()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
+            .doOnSubscribe { showLoading() }
+            .doFinally { hideLoading() }
             .subscribe({
                 status.value = it
             }, {

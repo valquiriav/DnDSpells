@@ -24,12 +24,20 @@ class SpellDetailsViewModel(
     val observableStatus: LiveData<SpellModel>
         get() = status
 
+    private fun showLoading() {
+        loading.value = true
+    }
+
+    private fun hideLoading() {
+        loading.value = false
+    }
+
     fun getSpellDetails(index: String) {
         getSpellDetailsUseCase.getSpellDetails(index)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
-            .doOnSubscribe { loading.value = true }
-            .doFinally { loading.value = false }
+            .doOnSubscribe { showLoading() }
+            .doFinally { hideLoading() }
             .subscribe({
                 status.value = it
             }, {
