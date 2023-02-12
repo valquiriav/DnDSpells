@@ -36,6 +36,18 @@ class SpellDetailsFragment : Fragment() {
         viewModel.observableStatus.observe(viewLifecycleOwner) {
             configureScreen(it)
         }
+
+        viewModel.observableLoading.observe(viewLifecycleOwner) {
+            with(binding) {
+                if (it) {
+                    spellDetailsShimmer.visibility = View.VISIBLE
+                } else {
+                    spellDetailsShimmer.visibility = View.GONE
+                    spellDetailsView.visibility = View.VISIBLE
+                }
+            }
+
+        }
     }
 
     private fun configureScreen(data: SpellModel) {

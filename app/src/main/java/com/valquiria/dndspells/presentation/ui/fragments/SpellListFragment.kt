@@ -45,13 +45,16 @@ class SpellListFragment : Fragment() {
             adapter.addItems(it)
         }
 
-        viewModel.observableLoading.observe(viewLifecycleOwner){
-            if (it == true) {
-                binding.shimmer.visibility = VISIBLE
-            } else {
-                binding.shimmer.visibility = GONE
-                binding.spellListRecyclerView.visibility = VISIBLE
+        viewModel.observableLoading.observe(viewLifecycleOwner) {
+            with(binding) {
+                if (it) {
+                    shimmer.visibility = VISIBLE
+                } else {
+                    shimmer.visibility = GONE
+                    spellListRecyclerView.visibility = VISIBLE
+                }
             }
+
         }
     }
 

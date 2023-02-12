@@ -13,7 +13,7 @@
         android:layout_margin="@dimen/margin_40"
         android:text="@string/spell_list_title"
         android:textColor="@color/purple_700"
-        android:textSize="28sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

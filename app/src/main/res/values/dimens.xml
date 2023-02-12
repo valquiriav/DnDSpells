@@ -3,11 +3,15 @@
 
     <!--Margin-->
 
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
     <dimen name="margin_40">40dp</dimen>
 
     <!--Padding-->
 
     <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_20">20dp</dimen>
     <dimen name="padding_40">40dp</dimen>
+    <dimen name="padding_80">80dp</dimen>
 
 </resources>
