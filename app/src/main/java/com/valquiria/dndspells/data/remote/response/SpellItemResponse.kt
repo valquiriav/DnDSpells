@@ -11,5 +11,11 @@ data class SpellItemResponse(
     val name: String? = null,
 
     @field:SerializedName("desc")
-    val description: List<String>? = null
+    val description: List<String>? = null,
+
+    @field:SerializedName("level")
+    val spellLevel: Int? = null,
+
+    @field:SerializedName("school")
+    val spellSchool: SchoolResponse? = null
 )

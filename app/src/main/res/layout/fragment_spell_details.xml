@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/spellSubtitle"
+            android:id="@+id/spell_subtitle_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -50,7 +50,7 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spellSubtitle" />
+            app:layout_constraintTop_toBottomOf="@id/spell_subtitle_view" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

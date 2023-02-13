@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.valquiria.dndspells.R
 import com.valquiria.dndspells.databinding.FragmentSpellDetailsBinding
 import com.valquiria.dndspells.domain.model.SpellModel
 import com.valquiria.dndspells.presentation.ui.viewModel.SpellDetailsViewModel
@@ -51,9 +52,12 @@ class SpellDetailsFragment : Fragment() {
     }
 
     private fun configureScreen(data: SpellModel) {
+
         with(binding) {
             spellNameLabel.text = data.spellName
             spellDescription.text = data.spellDescription
+            spellSubtitleView.text = getString(R.string.spell_subtitle, data.spellLevel, data.spellSchool)
         }
     }
+
 }

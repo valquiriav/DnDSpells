@@ -19,7 +19,9 @@ class GetSpellListUseCase(
                 SpellModel(
                     spellIndex = spell.index,
                     spellName = spell.name,
-                    spellDescription = spell.description?.elementAt(0)
+                    spellDescription = spell.description?.elementAt(0),
+                    spellLevel = spell.spellLevel,
+                    spellSchool = spell.spellSchool?.schoolName
                 )
             )
         }

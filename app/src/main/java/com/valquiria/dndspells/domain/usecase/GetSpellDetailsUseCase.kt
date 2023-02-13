@@ -17,7 +17,9 @@ class GetSpellDetailsUseCase(
         return SpellModel(
             spellIndex = index,
             spellName = name,
-            spellDescription = description?.elementAt(0)
+            spellDescription = description?.elementAt(0),
+            spellLevel = spellLevel,
+            spellSchool = spellSchool?.schoolName
         )
     }
 }
