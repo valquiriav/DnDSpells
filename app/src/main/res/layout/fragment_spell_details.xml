@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/spellDetailsView"
+        android:id="@+id/spell_details_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/spellNameLabel"
+            android:id="@+id/spell_name_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_40"
@@ -37,10 +37,10 @@
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spellNameLabel" />
+            app:layout_constraintTop_toBottomOf="@id/spell_name_label" />
 
         <TextView
-            android:id="@+id/spellDescription"
+            android:id="@+id/spell_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -55,7 +55,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/spellDetailsShimmer"
+        android:id="@+id/spell_details_shimmer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/spellNameLabelShimmer"
+                    android:id="@+id/spell_name_label_shimmer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin_40"
@@ -86,7 +86,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/spellSubtitleShimmer"
+                    android:id="@+id/spell_subtitle_shimmer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/margin_40"
@@ -97,10 +97,10 @@
                     android:textStyle="italic"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/spellNameLabelShimmer" />
+                    app:layout_constraintTop_toBottomOf="@id/spell_name_label_shimmer" />
 
                 <TextView
-                    android:id="@+id/spellDescriptionShimmer"
+                    android:id="@+id/spell_description_shimmer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin_40"
@@ -111,7 +111,7 @@
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/spellSubtitleShimmer" />
+                    app:layout_constraintTop_toBottomOf="@id/spell_subtitle_shimmer" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

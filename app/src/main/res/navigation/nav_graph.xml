@@ -3,22 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/spellListFragment">
+    app:startDestination="@id/spell_list_fragment">
 
     <fragment
-        android:id="@+id/spellListFragment"
+        android:id="@+id/spell_list_fragment"
         android:name="com.valquiria.dndspells.presentation.ui.fragments.SpellListFragment"
-        android:label="navSpellList"
         tools:layout="@layout/fragment_spell_list">
         <action
             android:id="@+id/action_spellListFragment_to_spellDetailsFragment"
-            app:destination="@id/spellDetailsFragment" />
+            app:destination="@id/spell_details_fragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/spellDetailsFragment"
+        android:id="@+id/spell_details_fragment"
         android:name="com.valquiria.dndspells.presentation.ui.fragments.SpellDetailsFragment"
-        android:label="navSpellDetailsFragment"
         tools:layout="@layout/fragment_spell_details">
         <argument
             android:name="spellIndex"

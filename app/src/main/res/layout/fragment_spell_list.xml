@@ -7,7 +7,7 @@
     tools:context=".presentation.ui.activity.MainActivity">
 
     <TextView
-        android:id="@+id/spellListTitle"
+        android:id="@+id/spell_list_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_40"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spellListTitle">
+        app:layout_constraintTop_toBottomOf="@id/spell_list_title">
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:layout_width="match_parent"
@@ -62,7 +62,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/spellListRecyclerView"
+        android:id="@+id/spell_list_recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/margin_40"
@@ -72,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spellListTitle"
+        app:layout_constraintTop_toBottomOf="@id/spell_list_title"
         app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/recycler_view_item_spell" />
 
