@@ -9,4 +9,6 @@ https://www.dnd5eapi.co/
 
 Icons:
 
-<a href="https://www.flaticon.com/free-icons/magic" title="magic icons">Magic icons created by smalllikeart - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/magic" title="magic icons">Magic icon created by smalllikeart - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/crystal-ball" title="crystal ball icons">Crystal ball icon created by Freepik - Flaticon</a>

@@ -17,19 +17,13 @@ open class SpellListViewModel(
     private val loading = MutableLiveData(false)
     val observableLoading: LiveData<Boolean> = loading
 
-    private fun showLoading() {
-        loading.value = true
-    }
-
-    private fun hideLoading() {
-        loading.value = false
-    }
-
     private val status = MutableLiveData<List<SpellModel>>()
     val observableStatus: LiveData<List<SpellModel>>
         get() = status
 
     private val action = MutableLiveData<SpellAction>()
+    val observableAction: LiveData<SpellAction>
+        get() = action
 
     fun getSpells() {
         getSpellListUseCase.getSpells()
@@ -45,5 +39,13 @@ open class SpellListViewModel(
                     else -> action.value = SpellAction.GenericError
                 }
             })
+    }
+
+    private fun showLoading() {
+        loading.value = true
+    }
+
+    private fun hideLoading() {
+        loading.value = false
     }
 }

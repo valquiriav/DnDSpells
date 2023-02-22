@@ -3,11 +3,12 @@ package com.valquiria.dndspells.presentation.ui.fragments
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.GONE
-import android.view.View.VISIBLE
+import android.view.View.*
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.valquiria.dndspells.databinding.FragmentSpellListBinding
+import com.valquiria.dndspells.presentation.ui.SpellAction
+import com.valquiria.dndspells.presentation.ui.SpellFeedback
 import com.valquiria.dndspells.presentation.ui.view.recycler.SpellListAdapter
 import com.valquiria.dndspells.presentation.ui.viewModel.SpellListViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -41,6 +42,15 @@ class SpellListFragment : Fragment() {
     }
 
     private fun setupObserver() {
+
+        viewModel.observableAction.observe(viewLifecycleOwner) {
+            when (it) {
+                SpellAction.GenericError -> setFeedback(SpellFeedback.ERROR)
+                SpellAction.NoInternet -> setFeedback(SpellFeedback.CONNECTION)
+                SpellAction.NotFoundData -> setFeedback(SpellFeedback.NOT_FOUND)
+            }
+        }
+
         viewModel.observableStatus.observe(viewLifecycleOwner) {
             adapter.addItems(it)
         }
@@ -55,6 +65,13 @@ class SpellListFragment : Fragment() {
                 }
             }
 
+        }
+    }
+
+    private fun setFeedback(feedbackError: SpellFeedback) {
+        with(binding) {
+            customFeedback.visibility = VISIBLE
+            customFeedback.setFeedback(feedbackError)
         }
     }
 
